@@ -15,10 +15,11 @@ app.post('/', async (req, res) => {
 
     const url = body.url;
     const options = body.options;
-    
+   
     const apiResponse = await fetch(url, options)
         .then(res => res.json())
-        .then(data => { return data });
+        .then(data => { return data })
+        .catch(err => { return err });
 
     res.send(apiResponse);
 })
