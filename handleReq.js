@@ -18,8 +18,8 @@ app.post('/', async (req, res) => {
    
     const apiResponse = await fetch(url, options)
         .then(res => res.json())
-        .then(data => { return data })
-        .catch(err => { return err });
+        .then(data => data)
+        .catch(err => err);
 
     res.send(apiResponse);
 })
